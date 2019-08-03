@@ -21,7 +21,8 @@ function Install-TabCompletion {
             continue;
         }
         if ($PSCmdlet.ShouldProcess("Installing module '$moduleName' from PSGallery")) {
-            Install-Module -Name $moduleName -Repository PSGallery -Scope CurrentUser -Force -Verbose
+            Write-Verbose "Installing module '$moduleName' from PSGallery with Scope 'CurrentUser'" -Verbose
+            Install-Module -Name $moduleName -Repository PSGallery -Scope CurrentUser -Force
         }
     }
 }
