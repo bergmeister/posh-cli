@@ -1,4 +1,4 @@
-# posh-cli
+# posh-cli [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A meta module to bootstrap CLI tab completion PowerShell modules.
 
