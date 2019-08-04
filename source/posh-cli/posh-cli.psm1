@@ -10,7 +10,7 @@ function Install-TabCompletion {
     $applications = (Get-Command -CommandType Application) | ForEach-Object { $_.Name.Replace($_.Extension, '') }
 
     # Store available CLI completion modules remotely so that user's do not have to update this module when checking for updates
-    $completionSourceUri = 'https://raw.githubusercontent.com/bergmeister/posh-cli/master/source/cli-modules.json'
+    $completionSourceUri = 'https://raw.githubusercontent.com/bergmeister/posh-cli/master/source/cli-modules-v1.json'
     $completionModules = (Invoke-RestMethod -Uri $completionSourceUri).PSObject.Properties
 
     foreach ($completionModule in $completionModules) {
@@ -18,7 +18,7 @@ function Install-TabCompletion {
         if (-not ($applications.Contains($cliName))) {
             continue;
         }
-        $moduleName = $completionModule.Value
+        $moduleName = $completionModule.Value.PSModuleName
         if (Get-Module -Name $moduleName -ListAvailable) {
             Write-Verbose "Module '$moduleName' is already installed, skipping"
             $moduleAlreadyInstalled = $true
