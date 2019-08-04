@@ -28,7 +28,8 @@ function Install-TabCompletion {
         }
         if ($PSCmdlet.ShouldProcess("Installing module '$moduleName' from PSGallery")) {
             Write-Verbose "Installing module '$moduleName' from PSGallery with Scope 'CurrentUser'" -Verbose
-            Install-Module -Name $moduleName -Repository PSGallery -Scope CurrentUser -Force
+            # posh-git has a clobber, hence the used switch
+            Install-Module -Name $moduleName -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
             if (-not $moduleAlreadyInstalled) {
                 Add-CommandToProfile -Command "Import-Module $moduleName"
             }
