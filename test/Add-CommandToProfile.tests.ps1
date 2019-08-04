@@ -9,7 +9,7 @@ Describe "Add-CommandToProfile" {
     
     It "Appends command to PROFILE with newline prepended" {
         $randomText = "#$(New-Guid)"
-        Add-CommandToProfile $randomText
+        Add-CommandToProfile $randomText -Verbose
         Get-Content $PROFILE -Raw | Should -MatchExactly "$([System.Environment]::NewLine)$randomText"
     }
 }
