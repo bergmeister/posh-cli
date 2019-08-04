@@ -1,6 +1,6 @@
 Describe "Add-CommandToProfile" {
     BeforeAll {
-        Import-Module ..\source\posh-cli\posh-cli.psm1
+        Import-Module (Join-Path  $PSScriptRoot ..\source\posh-cli\posh-cli.psm1)
     }
 
     AfterAll {

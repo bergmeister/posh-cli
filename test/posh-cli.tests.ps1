@@ -1,6 +1,6 @@
 Describe "Install-TabCompletion" {
     BeforeAll {
-        Import-Module ..\source\posh-cli\posh-cli.psm1
+        Import-Module (Join-Path  $PSScriptRoot ..\source\posh-cli\posh-cli.psm1)
         if (Get-Module posh-git -ListAvailable) {
             $uninstalledPoshGit = $true
             Uninstall-Module posh-git
