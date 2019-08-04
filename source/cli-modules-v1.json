@@ -1,0 +1,32 @@
+{
+    "cargo": {
+        "PSModuleName": "posh-cargo"
+    },
+    "dcos": {
+        "PSModuleName": "posh-dotnet"
+    },
+    "dotnet": {
+        "PSModuleName": "posh-docker"
+    },
+    "docker": {
+        "PSModuleName": "posh-docker"
+    },
+    "git": {
+        "PSModuleName": "posh-git"
+    },
+    "mvn": {
+        "PSModuleName": "MavenAutoCompletion"
+    },
+    "npm": {
+        "PSModuleName": "npm-completion"
+    },
+    "scoop": {
+        "PSModuleName": "scoop-completion"
+    },
+    "vsts": {
+        "PSModuleName": "posh-vsts-cli"
+    },
+    "yarn": {
+        "PSModuleName": "yarn-completion"
+    }
+}
