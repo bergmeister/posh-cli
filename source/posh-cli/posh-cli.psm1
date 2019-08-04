@@ -7,7 +7,12 @@ function Install-TabCompletion {
     )
 
     # Get available CLIs
-    $applications = (Get-Command -CommandType Application) | ForEach-Object { $_.Name.Replace($_.Extension, '') }
+    $applications = (Get-Command -CommandType Application) | ForEach-Object {
+        if ([string]::IsNullOrWhiteSpace($_.Extension)) {
+            return $_.Name
+        }
+        return $_.Name.Replace($_.Extension, '')
+    }
 
     # Store available CLI completion modules remotely so that user's do not have to update this module when checking for updates
     $completionSourceUri = 'https://raw.githubusercontent.com/bergmeister/posh-cli/master/source/cli-modules-v1.json'
