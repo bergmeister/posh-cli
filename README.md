@@ -14,15 +14,15 @@ Install-TabCompletion
 
 It will look at which CLIs are available and if any of the following are available, then the corresponding PowerShell tab completion module is installed from the PSGallery.
 
-| CLI        | PowerShell tab completion module |
-| ---------- | ---------------------------------|
-| cargo      | posh-cargo                       |
-| dcos       | posh-dcos                        |
-| dotnet     | posh-dotnet                      |
-| docker     | posh-docker                      |
-| git        | posh-git                         |
-| mvn        | MavenAutoCompletion              |
-| npm        | npm-completion                   |
-| scoop      | scoop-completion                 |
-| vsts       | posh-vsts-cli                    |
-| yarn       | yarn-completion                  |
+| CLI    | PowerShell tab completion module                                                      |
+| ------ | ------------------------------------------------------------------------------------- |
+| cargo  | [posh-cargo](https://www.powershellgallery.com/packages/posh-cargo)                   |
+| dcos   | [posh-dcos](https://www.powershellgallery.com/packages/posh-dcos)                     |
+| dotnet | [posh-dotnet](https://www.powershellgallery.com/packages/posh-dotnet)                 |
+| docker | [posh-docker](https://www.powershellgallery.com/packages/posh-docker)                 |
+| git    | [posh-git](https://www.powershellgallery.com/packages/posh-git)                       |
+| mvn    | [MavenAutoCompletion](https://www.powershellgallery.com/packages/MavenAutoCompletion) |
+| npm    | [npm-completion](https://www.powershellgallery.com/packages/npm-completion)           |
+| scoop  | [scoop-completion](https://www.powershellgallery.com/packages/scoop-completion)       |
+| vsts   | [posh-vsts-cli](https://www.powershellgallery.com/packages/posh-vsts-cli)             |
+| yarn   | [yarn-completion](https://www.powershellgallery.com/packages/yarn-completion)         |

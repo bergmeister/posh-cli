@@ -1,0 +1,9 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"name": "PowerShell",
+	"dockerFile": "Dockerfile",
+
+	"extensions": [
+		"ms-vscode.powershell"
+	]
+}
