@@ -24,6 +24,7 @@ function Install-TabCompletion {
             continue;
         }
         $moduleName = $completionModule.Value.PSModuleName
+        $moduleAlreadyInstalled = $false
         if (Get-Module -Name $moduleName -ListAvailable) {
             Write-Verbose "Module '$moduleName' is already installed, skipping"
             $moduleAlreadyInstalled = $true
