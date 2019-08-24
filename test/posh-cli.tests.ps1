@@ -18,7 +18,7 @@ Describe "Install-TabCompletion" {
         # Check pre-requisites first
         Get-Command -Name git -CommandType Application | Should -Not -BeNullOrEmpty
         Get-Module posh-git -ListAvailable | Should -BeNullOrEmpty
-        Install-TabCompletion
+        Install-TabCompletion -Verbose
         Get-Module posh-git -ListAvailable | Should -Not -BeNullOrEmpty
         Get-Content $PROFILE -Raw | Should -MatchExactly "$([System.Environment]::NewLine)Import-Module posh-git"
     }
