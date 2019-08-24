@@ -1,0 +1,19 @@
+pool:
+  name: Hosted Windows 2019 with VS2019
+steps:
+- pwsh: |
+   Install-Module -Name Pester -Force -Scope CurrentUser
+   Invoke-Pester -OutputFile Test-PSCore.XML -EnableExit
+  displayName: 'Test on PowerShell Core'
+
+- powershell: |
+   Install-Module -Name Pester -Force -Scope CurrentUser
+   Invoke-Pester -OutputFile Test-WinPS.XML -EnableExit
+  displayName: 'Test on Windows PowerShell'
+
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results TEST-*.xml'
+  inputs:
+    testResultsFormat: NUnit
+    testResultsFiles: 'TEST-*.xml'
+  condition: succeededOrFailed()
