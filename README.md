@@ -4,17 +4,18 @@
 
 A meta module to bootstrap CLI tab completion PowerShell modules.
 
-# Usage
-
-This is an early prototype with some manual setup action like adding the correct `Import-Module` calls to your `$PROFILE`. At the moment, it analyses the CLIs that you have installed and installs modules from the PSGallery that help with the tab completion.
+## Usage
 
 ```pwsh
 Install-Module -Name posh-cli -Repository PSGallery
 Install-TabCompletion
-# Add Import-Module calls to your $PROFILE
 ```
 
-It will look at which CLIs are available and if any of the following are available, then the corresponding PowerShell tab completion module is installed from the PSGallery.
+## Overview
+
+The module analyses the installed CLIs and installs modules from the PSGallery that help with the tab completion. It automatically executes and adds the necessary calls for initialisation of the installed tab completion modules to your `$PROFILE`.
+
+Currently it is aware of the following modules.
 
 | CLI    | PowerShell tab completion module                                                      |
 | ------ | ------------------------------------------------------------------------------------- |
@@ -28,3 +29,5 @@ It will look at which CLIs are available and if any of the following are availab
 | scoop  | [scoop-completion](https://www.powershellgallery.com/packages/scoop-completion)       |
 | vsts   | [posh-vsts-cli](https://www.powershellgallery.com/packages/posh-vsts-cli)             |
 | yarn   | [yarn-completion](https://www.powershellgallery.com/packages/yarn-completion)         |
+
+Should new modules be added to the list, then just calling `Install-TabCompletion` is sufficient as the list is stored remotely and does not require an update of `posh-cli` itself.

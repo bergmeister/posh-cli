@@ -40,6 +40,7 @@ function Install-TabCompletion {
                 $command = "Import-Module $moduleName"
                 Write-Verbose "Adding command '$command' to `$PROFILE"
                 Add-CommandToProfile -Command $command
+                Invoke-Command -ScriptBlock ([scriptblock]::Create($command))
             }
         }
     }
