@@ -36,7 +36,9 @@ function Install-TabCompletion {
             # posh-git has a clobber, hence the used switch
             Install-Module -Name $moduleName -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
             if (-not $moduleAlreadyInstalled) {
-                Add-CommandToProfile -Command "Import-Module $moduleName"
+                $command = "Import-Module $moduleName"
+                Write-Verbose "Adding command '$command' to `$PROFILE"
+                Add-CommandToProfile -Command $command
             }
         }
     }
