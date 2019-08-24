@@ -3,16 +3,22 @@ pool:
 steps:
 - pwsh: |
    Install-Module -Name Pester -Force -Scope CurrentUser
-   Invoke-Pester -OutputFile Test-PSCore.XML -EnableExit
+   Invoke-Pester -OutputFile Test-PSCore.xml -EnableExit
   displayName: 'Test on PowerShell Core'
+  
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results TEST-PSCore.xml'
+  inputs:
+    testResultsFormat: NUnit
+    testResultsFiles: 'TEST-*.xml'
 
 - powershell: |
    Install-Module -Name Pester -Force -Scope CurrentUser
-   Invoke-Pester -OutputFile Test-WinPS.XML -EnableExit
+   Invoke-Pester -OutputFile Test-WinPS.xml -EnableExit
   displayName: 'Test on Windows PowerShell'
 
 - task: PublishTestResults@2
-  displayName: 'Publish Test Results TEST-*.xml'
+  displayName: 'Publish Test Results TEST-WinPS.xml'
   inputs:
     testResultsFormat: NUnit
     testResultsFiles: 'TEST-*.xml'

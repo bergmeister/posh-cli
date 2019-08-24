@@ -1,4 +1,6 @@
-# posh-cli [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# posh-cli [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![posh-cli](https://img.shields.io/powershellgallery/v/posh-cli.svg?style=flat-square&label=posh-cli)](https://www.powershellgallery.com/packages/posh-cli/)
+
+[![Build Status](https://dev.azure.com/christophbergmeister/posh-cli/_apis/build/status/bergmeister.posh-cli?branchName=master)](https://dev.azure.com/christophbergmeister/posh-cli/_build/latest?definitionId=41&branchName=master)
 
 A meta module to bootstrap CLI tab completion PowerShell modules.
 
