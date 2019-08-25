@@ -1,9 +1,6 @@
 function Install-TabCompletion {
     [CmdletBinding(SupportsShouldProcess)]
     param(
-        # Updates already installed modules
-        [switch]
-        $Update
     )
 
     # Get available CLIs
@@ -33,16 +30,24 @@ function Install-TabCompletion {
         if (Get-Module -Name $moduleName -ListAvailable) {
             Write-Verbose "Module '$moduleName' is already installed, skipping"
             $moduleAlreadyInstalled = $true
-            if (-not $Update.IsPresent) {
-                continue
-            }
         }
         if ($PSCmdlet.ShouldProcess("Installing module '$moduleName' from PSGallery")) {
-            Write-Verbose "Installing module '$moduleName' from PSGallery with Scope 'CurrentUser'" -Verbose
-            # posh-git has a clobber, hence the used switch
-            Install-Module -Name $moduleName -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
+            $customInstallCommand = $completionModule.Value.CustomInstallCommand
+            if ($null -eq $customInstallCommand) {
+                Write-Verbose "Installing module '$moduleName' from PSGallery with Scope 'CurrentUser'" -Verbose
+                # posh-git has a clobber, hence the used switch
+                Install-Module -Name $moduleName -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
+            }
+            else {
+                Write-Verbose "Installing module '$moduleName' using custom command '$customInstallCommand'" -Verbose
+                Invoke-Command -ScriptBlock ([scriptblock]::Create($customInstallCommand))
+            }
+            
             if (-not $moduleAlreadyInstalled) {
-                $command = "Import-Module $moduleName"
+                $customLoadCommand = $completionModule.Value.CustomLoadCommand
+                if ($null -eq $customLoadCommand) {
+                    $command = "Import-Module $moduleName"
+                }
                 Write-Verbose "Adding command '$command' to `$PROFILE"
                 Add-CommandToProfile -Command $command
                 Invoke-Command -ScriptBlock ([scriptblock]::Create($command))

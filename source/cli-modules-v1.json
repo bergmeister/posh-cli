@@ -22,7 +22,9 @@
         "PSModuleName": "npm-completion"
     },
     "scoop": {
-        "PSModuleName": "scoop-completion"
+        "PSModuleName": "scoop-completion",
+        "CustomInstallCommand": "scoop bucket add scoop-completion https://github.com/liuzijing97/scoop-completion; scoop install scoop-completion",
+        "CustomLoadCommand": "if (!(Test-Path -Path \"$env:SCOOP\")) { $env:SCOOP = \"$env:USERPROFILE\\scoop\" }; Import-Module \"$env:SCOOP\/modules\/scoop-completion\""
     },
     "vsts": {
         "PSModuleName": "posh-vsts-cli"
