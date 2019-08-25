@@ -1,10 +1,6 @@
 function Install-TabCompletion {
     [CmdletBinding(SupportsShouldProcess)]
-    param(
-        # Updates already installed modules
-        [switch]
-        $Update
-    )
+    param()
 
     # Get available CLIs
     $applications = (Get-Command -CommandType Application) | ForEach-Object {
@@ -33,9 +29,6 @@ function Install-TabCompletion {
         if (Get-Module -Name $moduleName -ListAvailable) {
             Write-Verbose "Module '$moduleName' is already installed, skipping"
             $moduleAlreadyInstalled = $true
-            if (-not $Update.IsPresent) {
-                continue
-            }
         }
         if ($PSCmdlet.ShouldProcess("Installing module '$moduleName' from PSGallery")) {
             Write-Verbose "Installing module '$moduleName' from PSGallery with Scope 'CurrentUser'" -Verbose

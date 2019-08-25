@@ -11,6 +11,10 @@ Install-Module -Name posh-cli -Repository PSGallery
 Install-TabCompletion
 ```
 
+Install the `posh-cli` module and calling `Install-TabCompletion` installs required modules that tab completion to the CLIs available on your system. It also imports the module so that you can start using it and adds such a call to your PowerShell $PROFILE as well.
+
+You can call the `Install-TabCompletion` cmdlet also to update those modules at a later time. The list of modules is stored remotely in the [cli-modules-v1.json](./source/cli-modules-v1.json) file, therefore you should not need to update `posh-cli` itself unless new capabilities become available that you want to use. Only non-breaking changes will be made to this JSON file.
+
 ## Overview
 
 The module analyses the installed CLIs and installs modules from the PSGallery that help with the tab completion. It automatically executes and adds the necessary calls for initialisation of the installed tab completion modules to your `$PROFILE`.
