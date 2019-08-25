@@ -21,7 +21,12 @@ function Install-TabCompletion {
     foreach ($completionModule in $completionModules) {
         $cliName = $completionModule.Name
         if (-not ($applications.Contains($cliName))) {
-            continue;
+            continue
+        }
+        [Version] $minimumPowerShellVersion = $completionModule.MinimumPowerShellVersion
+        if ($null -ne $minimumPowerShellVersion -and $PSVersionTable.PSVersion -lt $minimumPowerShellVersion) {
+            Write-Warning "Module $completionModule offers tab completion for '$cliName' CLI but requires minimum PowerShell version $minimumPowerShellVersion, which is higher than current version $($PSVersionTable.PSVersion)"
+            continue
         }
         $moduleName = $completionModule.Value.PSModuleName
         $moduleAlreadyInstalled = $false
@@ -29,7 +34,7 @@ function Install-TabCompletion {
             Write-Verbose "Module '$moduleName' is already installed, skipping"
             $moduleAlreadyInstalled = $true
             if (-not $Update.IsPresent) {
-                continue;
+                continue
             }
         }
         if ($PSCmdlet.ShouldProcess("Installing module '$moduleName' from PSGallery")) {

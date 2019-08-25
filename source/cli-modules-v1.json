@@ -15,7 +15,8 @@
         "PSModuleName": "posh-git"
     },
     "mvn": {
-        "PSModuleName": "MavenAutoCompletion"
+        "PSModuleName": "MavenAutoCompletion",
+        "MinimumPowerShellVersion": "6.0"
     },
     "npm": {
         "PSModuleName": "npm-completion"
