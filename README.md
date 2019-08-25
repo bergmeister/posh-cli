@@ -17,8 +17,8 @@ The module analyses the installed CLIs and installs modules from the PSGallery t
 
 Currently it is aware of the following modules.
 
-| CLI    | PowerShell tab completion module                                                      | Remarks  |
-| ------ | ------------------------------------------------------------------------------------- |                                 |
+| CLI    | PowerShell tab completion module                                                      | Remarks                         |
+| ------ | ------------------------------------------------------------------------------------- | ------------------------------- |
 | cargo  | [posh-cargo](https://www.powershellgallery.com/packages/posh-cargo)                   |                                 |
 | dcos   | [posh-dcos](https://www.powershellgallery.com/packages/posh-dcos)                     |                                 |
 | dotnet | [posh-dotnet](https://www.powershellgallery.com/packages/posh-dotnet)                 |                                 |
