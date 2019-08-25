@@ -23,7 +23,7 @@ function Install-TabCompletion {
         if (-not ($applications.Contains($cliName))) {
             continue
         }
-        [Version] $minimumPowerShellVersion = $completionModule.MinimumPowerShellVersion
+        [Version] $minimumPowerShellVersion = $completionModule.Value.MinimumPowerShellVersion
         if ($null -ne $minimumPowerShellVersion -and $PSVersionTable.PSVersion -lt $minimumPowerShellVersion) {
             Write-Warning "Module $completionModule offers tab completion for '$cliName' CLI but requires minimum PowerShell version $minimumPowerShellVersion, which is higher than current version $($PSVersionTable.PSVersion)"
             continue

@@ -1,0 +1,19 @@
+pool:
+  name: Hosted Windows Container
+  demands: DotNetFramework
+
+# The build pipeline references a secret variable named ‘NuGetApiKey’. This variable is defined on the build definition and therefore not visible for security purposes.
+
+steps:
+- task: PowerShell@1
+  displayName: 'Publish to PSGallery'
+  inputs:
+    scriptType: inlineScript
+    arguments: '$(NuGetApiKey)'
+    inlineScript: |
+     param($NuGetApiKey)
+     
+     cd source
+     cd posh-cli
+     
+     Publish-Module -Path . -NuGetApiKey $NuGetApiKey
