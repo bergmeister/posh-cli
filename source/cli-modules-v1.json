@@ -3,13 +3,14 @@
         "PSModuleName": "posh-cargo"
     },
     "dcos": {
-        "PSModuleName": "posh-dotnet"
+        "PSModuleName": "posh-dcos"
     },
     "dotnet": {
-        "PSModuleName": "posh-docker"
+        "PSModuleName": "posh-dotnet"
     },
     "docker": {
-        "PSModuleName": "posh-docker"
+        "PSModuleName": "DockerCompletion",
+        "MinimumPowerShellVersion": "5.0"
     },
     "git": {
         "PSModuleName": "posh-git"
