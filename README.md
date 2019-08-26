@@ -26,7 +26,7 @@ Currently it is aware of the following modules.
 | cargo  | [posh-cargo](https://www.powershellgallery.com/packages/posh-cargo)                   |                                 |
 | dcos   | [posh-dcos](https://www.powershellgallery.com/packages/posh-dcos)                     |                                 |
 | dotnet | [posh-dotnet](https://www.powershellgallery.com/packages/posh-dotnet)                 |                                 |
-| docker | [posh-docker](https://www.powershellgallery.com/packages/posh-docker)                 |                                 |
+| docker | [DockerCompletion](https://www.powershellgallery.com/packages/DockerCompletion)       |                                 |
 | git    | [posh-git](https://www.powershellgallery.com/packages/posh-git)                       |                                 |
 | mvn    | [MavenAutoCompletion](https://www.powershellgallery.com/packages/MavenAutoCompletion) | Minimum PowerShell Version: 6.0 |
 | npm    | [npm-completion](https://www.powershellgallery.com/packages/npm-completion)           |                                 |
