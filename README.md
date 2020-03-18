@@ -21,17 +21,18 @@ The module analyses the installed CLIs and installs modules from the PSGallery t
 
 Currently it is aware of the following modules.
 
-| CLI    | PowerShell tab completion module                                                      | Remarks                         |
-| ------ | ------------------------------------------------------------------------------------- | ------------------------------- |
-| cargo  | [posh-cargo](https://www.powershellgallery.com/packages/posh-cargo)                   |                                 |
-| dcos   | [posh-dcos](https://www.powershellgallery.com/packages/posh-dcos)                     |                                 |
-| dotnet | [posh-dotnet](https://www.powershellgallery.com/packages/posh-dotnet)                 |                                 |
-| docker | [DockerCompletion](https://www.powershellgallery.com/packages/DockerCompletion)       |                                 |
-| git    | [posh-git](https://www.powershellgallery.com/packages/posh-git)                       |                                 |
-| mvn    | [MavenAutoCompletion](https://www.powershellgallery.com/packages/MavenAutoCompletion) | Minimum PowerShell Version: 6.0 |
-| npm    | [npm-completion](https://www.powershellgallery.com/packages/npm-completion)           |                                 |
-| scoop  | [scoop-completion](https://www.powershellgallery.com/packages/scoop-completion)       |                                 |
-| vsts   | [posh-vsts-cli](https://www.powershellgallery.com/packages/posh-vsts-cli)             |                                 |
-| yarn   | [yarn-completion](https://www.powershellgallery.com/packages/yarn-completion)         |                                 |
+| CLI       | PowerShell tab completion module                                                      | Remarks                         |
+| --------- | ------------------------------------------------------------------------------------- | ------------------------------- |
+| cargo     | [posh-cargo](https://www.powershellgallery.com/packages/posh-cargo)                   |                                 |
+| dcos      | [posh-dcos](https://www.powershellgallery.com/packages/posh-dcos)                     |                                 |
+| dotnet    | [posh-dotnet](https://www.powershellgallery.com/packages/posh-dotnet)                 |                                 |
+| docker    | [DockerCompletion](https://www.powershellgallery.com/packages/DockerCompletion)       |                                 |
+| gcloudsdk | [GcloudTabComplete](https://www.powershellgallery.com/packages/GcloudTabComplete)     | Minimum PowerShell Version: 5.1 |
+| git       | [posh-git](https://www.powershellgallery.com/packages/posh-git)                       |                                 |
+| mvn       | [MavenAutoCompletion](https://www.powershellgallery.com/packages/MavenAutoCompletion) | Minimum PowerShell Version: 6.0 |
+| npm       | [npm-completion](https://www.powershellgallery.com/packages/npm-completion)           |                                 |
+| scoop     | [scoop-completion](https://www.powershellgallery.com/packages/scoop-completion)       |                                 |
+| vsts      | [posh-vsts-cli](https://www.powershellgallery.com/packages/posh-vsts-cli)             |                                 |
+| yarn      | [yarn-completion](https://www.powershellgallery.com/packages/yarn-completion)         |                                 |
 
 Should new modules be added to the list, then just calling `Install-TabCompletion` is sufficient as the list is stored remotely and does not require an update of `posh-cli` itself.
