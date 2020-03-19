@@ -12,6 +12,10 @@
         "PSModuleName": "DockerCompletion",
         "MinimumPowerShellVersion": "5.0"
     },
+    "gcloud": {
+        "PSModuleName": "GcloudTabComplete",
+        "MinimumPowerShellVersion": "5.1"
+    },
     "git": {
         "PSModuleName": "posh-git"
     },
