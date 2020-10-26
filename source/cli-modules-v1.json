@@ -19,6 +19,9 @@
     "git": {
         "PSModuleName": "posh-git"
     },
+    "kubectl": {
+        "PSModuleName": "PSKubectlCompletion"
+    },
     "mvn": {
         "PSModuleName": "MavenAutoCompletion",
         "MinimumPowerShellVersion": "6.0"
