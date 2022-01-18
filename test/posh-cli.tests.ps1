@@ -8,7 +8,7 @@ Describe "Install-TabCompletion" {
     }
 
     AfterAll {
-        Remove-Module posh-cli
+        Remove-Module posh-cli -Force
         if ($uninstalledPoshGit) {
             Install-Module posh-git -Scope CurrentUser -Force
         }
