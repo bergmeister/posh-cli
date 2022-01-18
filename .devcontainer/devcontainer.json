@@ -2,7 +2,15 @@
 {
 	"name": "PowerShell",
 	"dockerFile": "Dockerfile",
-
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "pwsh",
+		"terminal.integrated.profiles.linux": {
+			"pwsh": {
+				"path": "pwsh",
+				"icon": "terminal-powershell"
+			}
+		}
+	},
 	"extensions": [
 		"ms-vscode.powershell"
 	]
